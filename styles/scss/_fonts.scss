@@ -1,0 +1,7 @@
+@import '_mixins';
+
+@include fontface("TT Norms Thin", '../../assets/fonts/TT-norms', 100, normal);
+@include fontface("TT Norms Regular", '../../assets/fonts/TT-norms', 400, normal);
+@include fontface("TT Norms Medium", '../../assets/fonts/TT-norms', 500, normal);
+@include fontface("TT Norms Bold", '../../assets/fonts/TT-norms', 700, normal);
+@include fontface("TT Norms Black", '../../assets/fonts/TT-norms', 900, normal);

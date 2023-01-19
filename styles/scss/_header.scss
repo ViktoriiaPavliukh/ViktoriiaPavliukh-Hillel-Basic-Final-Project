@@ -1,0 +1,362 @@
+.header-info{
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.header-left{
+    display: flex;
+    flex-wrap: nowrap;
+
+    &__title{
+        font-size: 38px;
+        line-height: 45px;
+        color: $text-color-primary;
+        font-weight: 100;
+        font-family: "TT Norms Thin", sans-serif;
+        padding: 0 26px;
+        position: relative;
+
+        &:before{
+            @include main;
+            background: url("../../assets/images/icons/slash.svg") center no-repeat;
+            background-size: cover;
+            width: 21px;
+            height: 46px;
+            left: 5px;
+        }
+        &:after{
+            @include main;
+            background: url("../../assets/images/icons/symbol_small.svg") center no-repeat;
+            background-size: cover;
+            width: 41px;
+            height: 46px;
+            left: 90%;
+            top: 1px;
+        }
+        &--light{
+            color: $text-color-subtitle;
+        }
+    }
+    &__link{
+        width: 155px;
+        height: 62px;
+        background: url($path-to-icons + 'logo.svg') center no-repeat;
+        background-size: cover;
+
+        &--light{
+            background: url('../../assets/images/icons/logo_white.svg') center no-repeat;
+            background-size: cover;
+        }
+    }
+    &__menu{
+        display: none;
+        position: absolute;
+        right: 4%;
+        z-index: 100;
+    }
+    &__button{
+        background: #323264;
+        border: none;
+        display: block;
+        width: 25px;
+        height: 2px;
+        position: relative;
+        top: 15px;
+        padding: 0;
+
+        &:before, &:after{
+            content: '';
+            display: block;
+            width: 25px;
+            height: 2px;
+            position: absolute;
+            left: 0;
+        }
+        &--dark{
+            background-color: #323264;
+           
+            &:before, &:after{
+                background-color: #323264;
+            }     
+        }
+        &--white{
+            background: white;
+
+            &:before, &:after{
+                background-color: white;
+            }
+        }
+
+        &:before{
+            bottom: -5px;
+        }            
+        &:after{
+            bottom: -10px;
+        }        
+    }
+    &:hover &{ 
+        &__dropdown{
+        display: block;
+        width: 23vw;  
+        transition: all 2s ease-out;
+        opacity: 1;
+        }
+    }   
+    &__dropdown{
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 50px;
+        background-color: white;
+        width: 110px;
+        text-decoration: none;
+        font-size: 14px;
+        line-height: 20px;
+        text-transform: lowercase;
+        z-index: 2;
+        opacity: 0;
+    }
+    &__nav{
+        display: block;
+        text-decoration: none;
+        color: $text-color-link-active;
+        margin-bottom: 10px;
+        margin-bottom: 5px;
+        padding-top: 5px;
+        padding-left: 5px;
+
+        &:hover{
+            color: $color-for-hover;
+        }
+    }
+}
+.header-right{
+        padding-top: 6px;
+        color: white;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        cursor: pointer;
+
+    &__top-line{
+        display: flex;
+        justify-content: right;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        &--light{
+            color: $text-color-links;
+        }
+    }
+    &__language{
+        display: flex;
+        flex-wrap: nowrap;
+        padding-top: 4px;
+
+    }
+    &__button{
+        font-weight: 700;
+        font-size: 12px;
+        letter-spacing: 1px;
+        line-height: 14px;
+        text-transform: uppercase;
+        border-radius: 8px;
+        background-color: transparent;
+        color: $text-color-links;
+        border: none;
+        
+        &--white{
+            color: $text-color-primary;
+        }
+        &--active{
+            background: $color-for-hover;
+            color: $text-color-primary;
+
+        }
+        &:hover{
+            background: $color-for-hover;
+            color: $text-color-primary;
+        }
+        &:checked{
+            background: $color-for-hover;
+            color: $text-color-primary;
+        }
+    }           
+    &__address{
+        padding: 6px $padding-main 0;
+        display: flex;
+        flex-wrap: nowrap;
+        font-weight: 100;
+        font-family: "TT Norms Thin", sans-serif;
+        position: relative;
+
+        &:hover{
+            color: $color-for-hover;
+        }
+        &:before{
+            @include circle;
+            background: $separator-color-primary;
+            position: absolute;
+            left: 3px;
+            top: 11px;
+        }
+        &:after{
+            @include circle;
+            background: $separator-color-primary;
+            position: absolute;
+            right: 6px;
+            top: 11px;
+        }
+    }
+    &__phone{
+        display: block;
+        padding-top: 6px;
+        padding-right: 26px;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        line-height: 18.88px;
+        position: relative;
+
+        &:hover{
+            color: $color-for-hover;
+        }
+        &:after{
+            @include circle;
+            background: $separator-color-primary;
+            position: absolute;
+            right: 11px;
+            top: 11px;
+        }
+        &--light{
+            color: $text-color-links;
+        }
+    }
+    &__fb{
+        width: 24px;
+        height: 24px;
+        font-size: 24px;
+        display: block;
+        position: relative;
+        font-family: 'Font Awesome 6 Brands';
+        font-weight: 600;
+        color: white;
+        
+        &:before{
+            content: '\f09a';
+            display: block;
+            position: absolute;
+            top: 1px;
+        }   
+        &--light{
+            color: $text-color-links;
+        }
+        &:hover{
+            color: $color-for-hover; 
+        }
+    }
+    &__navigation{
+        padding-top: 19px;
+        display: flex;
+        justify-content: right;
+      
+    }
+    &__link{
+        color: white;
+        text-transform: lowercase;
+        text-decoration: none;
+        text-align: right;
+        margin-left: 16px;
+
+        &:hover{
+        color: $color-for-hover; 
+        }
+        &--active{
+            border-bottom: 1px solid white; 
+        }
+    }
+    &__link-light{     
+        color: $text-color-link-active;
+        text-transform: lowercase;
+        text-decoration: none;
+        text-align: right;
+        margin-left: 16px;
+
+        &:hover{
+        color: $color-for-hover; 
+        }
+        &--active{
+            color: $color-for-hover; 
+            border-bottom: 1px solid $color-for-hover;
+        }
+    }
+}   
+.button-light{
+    color: $text-color-links;
+
+    &:hover{
+        color: white;
+    }
+}
+@media screen and (max-width: 1004px){
+    .header-info{
+        flex-direction: column-reverse;
+        justify-content: left;
+        padding: 20px 0;
+    }
+    .header-left{
+        &__menu{
+            display: block;
+        }
+        &__link{
+            width: 78px;
+            height: 31px;
+        }
+        &__title{
+            font-size: 19px;
+            line-height: 22px;
+            padding: 0 13px;
+
+            &:before{
+                width: 11px;
+                height: 24px;
+                left: 0;
+            }
+            &:after{
+                width: 21px;
+                height: 24px;
+            }
+        }
+    }
+    .header-right{
+        &__top-line{
+            justify-content: space-between;
+            padding-bottom: 10px;
+        }
+        &__address{
+            display: none;
+            &:after{
+                display: none;
+            }
+        }
+        &__phone{
+            padding-right: 0;
+            color: $text-color-links;
+
+            &:after{
+                display: none;
+            }
+        }
+        &__fb{
+            display: none;
+        }
+        &__navigation{
+            display: none;
+        }
+        &__button{
+            &--white{
+                color: $text-color-links;
+            }
+        }
+    }
+}

@@ -1,0 +1,164 @@
+@import '_variables';
+.footer-light{
+    background: $bg-color-section;
+}
+.footer-rounded{
+    background: $bg-color-section;
+    border-radius: 12px 12px 0 0;
+}
+.footer{
+    margin-top: -1px;
+    padding-top: 30px;
+    padding-bottom: $padding-main*2;
+    display: flex;
+    justify-content: space-between;
+}
+.footer-nav{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-basis: 425px;
+    flex-wrap: wrap;
+    line-height: 19px;
+    color: $text-color-subtitle;
+    
+    &__address{
+        padding-right: 31px;
+        position: relative;
+      
+        &:before{
+            @include circle;
+            background: $text-color-links;
+            position: absolute;
+            left: 241px;
+            top: 6px;
+        }
+    }
+    &__map{
+        padding-left: 16px;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 14px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $text-color-link-active;
+
+        &:hover{
+            color: $color-for-hover; 
+        }
+    }
+    &__phone{
+        font-weight: 700;
+        text-decoration: none;
+        color: $text-color-nav;
+        padding-top: 31px;
+        padding-left: 17px;
+        position: relative;
+
+        &:before{
+            @include circle;    
+            background: $text-color-links;
+            position: absolute;
+            left: 7px;
+	        top: 37px;
+        }
+        &:hover{
+            color: $color-for-hover; 
+        }
+    }
+    &__fb{
+        width: 38px;
+        height: 38px;
+        display: block;
+        position: relative;
+        font-family: 'Font Awesome 6 Brands';
+        font-weight: 600;
+        font-size: 38px;
+        color: $text-color-link-active;
+        
+   
+        &:before{
+            content: '\f09a';
+            display: block;
+            position: absolute;
+            top: 25px;
+        }   
+        &:hover{
+            color: $color-for-hover; 
+        }
+    }
+    &__mail{
+        font-weight: 700;
+	    text-decoration: none;
+        color: $text-color-link-active;
+        padding-top: 30px;
+        padding-left: 26px;
+        position: relative;
+
+        &:before{
+            @include circle;
+            background: $text-color-links;
+            position: absolute;
+            left: 10px;
+            top: 37px;
+        }    
+        &:hover{
+            color: $color-for-hover; 
+        }
+    }
+}
+.footer-copyright{
+    line-height: 19px;
+    color: $text-color-links;
+    padding-top: 4px;
+}
+@media screen and (max-width: 1004px){
+    .footer{
+        flex-direction: column;
+        justify-content: center;
+        padding: $padding-main 0;
+    }
+    .footer-nav{
+        flex-direction: column;
+        justify-content: center;
+        flex-basis: auto;
+
+        &__address{
+            padding: 0;
+            
+            &:before{
+                display: none;
+            }
+        }  
+        &__map{
+            padding: 10px 0;
+        }  
+        &__fb{  
+            
+            &:before{
+                top: 20px;
+            }
+        }
+        &__phone{
+            padding: 20px 0;
+
+            &:before{
+                display: none;
+            }
+        }
+        &__mail{
+            padding: 0;
+
+            &:before{
+                display: none;
+            }
+        }
+    }
+    .footer-copyright{
+        display: flex;
+        justify-content: center;
+        padding: 20px 0 98px;
+        text-align: center;
+    }
+}
